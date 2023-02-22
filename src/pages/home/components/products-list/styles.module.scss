@@ -1,0 +1,7 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.375rem,20%));
+    gap:1rem;
+    justify-content: center;
+  }
+   

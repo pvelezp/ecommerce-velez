@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Detail, Home } from '@/pages';
-import './App.css'
 
 function App() {
 
