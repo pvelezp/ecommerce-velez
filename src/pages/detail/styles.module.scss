@@ -1,0 +1,18 @@
+.product{
+    &Detail{
+        display:flex;
+        gap:4rem;
+        @media (max-width:600px){
+            flex-direction: column;
+        }
+        &Left{
+            flex:0.5;
+            display:grid;
+            place-items: center;
+            padding: 4rem 0;
+        }
+        &Right{
+            flex:0.5;
+        }
+    }
+}

@@ -6,12 +6,17 @@ export const Card = ({ item, onHandleClick }) => {
 		<article
 		onClick={onHandleClick}
 		 className={styles.card}>
-			<img src={imgUrl} width={133} height={112} alt={model} />
+			<img 
+			loading="lazy"
+			role="presentation"
+			decoding="async"
+			fetchpriority="high"
+			 src={imgUrl} alt={model} />
 			<h5>{model}</h5>
 			<h6>{brand}</h6>
 			<div>
 				<span>Price:</span>
-				<b>$ {price}.</b>
+				<b>$ {price}</b>
 			</div>
 		</article>
 	);

@@ -1,9 +1,9 @@
+import { useMemo } from "react";
 import { Card } from "@/components";
 import { CardSkeleton } from "@/components/card-skeleton";
-import { useMemo } from "react";
 import { useGetProducts } from "@/services";
-import styles from "./styles.module.scss";
 import { useNavigate } from "react-router-dom";
+import styles from "./styles.module.scss";
 
 export const ProductsList = ({ searchValue }) => {
 	const {data:items, isLoading}= useGetProducts()

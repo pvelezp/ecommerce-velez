@@ -16,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         defaultOptions: {
           queries: {
             staleTime: Infinity,
+            refetchInterval:60000*60
           },
         },
       })

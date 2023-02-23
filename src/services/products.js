@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery, useMutation } from "react-query";
 import { axiosInstance } from "./config";
 
 export const useGetProducts = () => {
@@ -10,7 +10,7 @@ export const useGetProducts = () => {
 }
 
 export const useGetProductById = (id) => {
-  const data = useQuery(["get-product-by-id"], async () => {
+  const data = useQuery(["get-product-by-id", id], async () => {
       const response = await axiosInstance.get(`/api/product/${id}`);
       return response.data;
     });
@@ -18,7 +18,7 @@ export const useGetProductById = (id) => {
 }
 
 export const useSaveToCart = () => {
-  const data = useMutation(["save-products-to-cart"], async (data) => {
+  const data = useMutation(["save-product-to-cart"], async (data) => {
     const response = await axiosInstance.post("/api/cart", data);
     return response.data;
   });
