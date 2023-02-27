@@ -35,7 +35,7 @@ You can run:
 npm run build
 ```
 
-## About the changes and refactors:
+## About the code:
 A Module driven design pattern was used for the code directory architecture. SOLID principles applied to React were applied. And all the best practices as possible were applied.
 This is a list of some relevant changes:
 1. Module architecture design
