@@ -1,9 +1,9 @@
 import { lazy } from "react";
+import Home from "./home";
 
-const Home = lazy(() => import("./home"));
 const Detail = lazy(() => import("./detail"));
 
 export {
-    Home,
     Detail,
+    Home
 }

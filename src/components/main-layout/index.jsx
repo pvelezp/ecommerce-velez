@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { Header } from "@/components"
 import styles from "./styles.module.scss"
 
 export const MainLayout = ({children}) => {
@@ -6,7 +6,7 @@ export const MainLayout = ({children}) => {
         <div className={styles.layout}>
             <Header />
            <main className={styles.main}>
-           {children}
+              {children}
            </main>
         </div>
     )

@@ -4,6 +4,7 @@ export const AppContext = createContext({});
 
 export const CartProvider = ({ children }) => {
 	const [cartCount, setCartCount] = useState(0);
+	const [currentDetailId, setCurrentDetailId] = useState("")
 
 	const addToCart = (count) => {
 		setCartCount(prevCount => prevCount +count)
@@ -13,6 +14,8 @@ export const CartProvider = ({ children }) => {
 		<AppContext.Provider
 			value={{
 				cartCount,
+				currentDetailId,
+				setCurrentDetailId,
 				addToCart,
 			}}
 		>

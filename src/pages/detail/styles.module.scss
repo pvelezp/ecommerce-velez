@@ -1,7 +1,7 @@
 .product{
     &Detail{
         display:flex;
-        gap:4rem;
+        gap:2rem;
         @media (max-width:600px){
             flex-direction: column;
         }
@@ -9,10 +9,31 @@
             flex:0.5;
             display:grid;
             place-items: center;
-            padding: 4rem 0;
+            >img{
+                width: 280px;
+                height: 480px;
+                object-fit: contain;
+                transform:
+                perspective(800px)
+                rotateY(25deg) scale(0.9)
+                rotateX(10deg);
+                transition: 0.6s ease all;
+                animation-duration: 0.5s;
+                animation-name: animate-pop;
+                animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+            
+              &:hover {
+                transform:
+                  perspective(800px)
+                  rotateY(-15deg)
+                  translateY(-50px)
+                  rotateX(10deg)
+              }
+            }
         }
         &Right{
             flex:0.5;
+            max-width: 470px;
         }
     }
 }

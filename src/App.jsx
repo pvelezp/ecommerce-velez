@@ -1,11 +1,12 @@
 import { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Detail, Home } from '@/pages';
+import { Home, Detail } from '@/pages';
+import { Spinner } from "@/components";
 
 function App() {
 
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<Spinner />}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/detail/:productId" element={<Detail />} />

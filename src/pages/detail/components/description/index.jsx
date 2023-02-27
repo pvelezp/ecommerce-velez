@@ -1,20 +1,30 @@
-import styles from "./styles.module.scss"
+import styles from "./styles.module.scss";
 
 export const Description = ({data}) => {
+
+    const infoDescription = [
+        { title:"Brand", text:data.brand},
+        { title:"Model", text:data.model},
+        { title:"Price", text:data.price || "N/A"},
+        { title:"CPU", text:data.cpu},
+        { title:"Operation system", text:data.os},
+        { title:"Display resolution", text:data.displayResolution},
+        { title:"Battery", text:data.battery|| "N/A"},
+        { title:"Cameras", text:(data.primaryCamera.length===1 || !Array.isArray(data.primaryCamera)) ? data.primaryCamera: data.primaryCamera.join(", ")},
+        { title:"Dimentions", text:data.dimentions},
+        { title:"Weight", text:data.weight|| "N/A"}
+    ]
+
     return (
-    <div className={styles.description}>
-        <h4>Description:</h4>
-        <p>{data.brand}</p>
-        <p>{data.model}</p>
-        <p>{data.price}</p>
-        <p>{data.cpu}</p>
-        <p>{data.os}</p>
-        <p>{data.displayResolution}</p>
-        <p>{data.battery}</p>
-        <p>{data.primaryCamera.length===1 ? data.primaryCamera: data.primaryCamera.join(", ")}</p>
-        <p>{data.dimentions}</p>
-        <p>{data.battery}</p>
-        <p>{data.weight}</p>
-    </div>
+    <section className={styles.description}>
+        <h2>Description:</h2>
+        {
+            infoDescription.map(({title,text}) =>(
+                <article key={title}>
+                    <b>{title}:</b> {text}
+                </article>
+            ))
+        }
+    </section>
     )
 }

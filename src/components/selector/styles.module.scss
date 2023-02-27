@@ -1,8 +1,15 @@
 .selector{
     display: flex;
     gap:1rem;
+    margin-bottom: 1rem;
     >button{
         border-radius: 8px;
+        position: relative;
         background-color: rgb(241, 237, 237);
+        >i{
+            position:absolute;
+            right:-3px;
+            top:-3px;
+        }
     }
 }

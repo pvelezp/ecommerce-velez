@@ -1,36 +1,24 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
 import App from './App'
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from "react-router-dom";
-import ErrorBoundary from '@/utils/error-boundary'
-import { CartProvider } from '@/context/cart-context'
-import { QueryClient, QueryClientProvider } from 'react-query';
+import {ErrorBoundary} from '@/utils'
+import { CartProvider, QueryProvider } from '@/context'
 import { MainLayout } from '@/components';
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <QueryClientProvider
-    client={
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            staleTime: Infinity,
-            refetchInterval:60000*60
-          },
-        },
-      })
-    }
-  >
-      <Router>
-		    <ErrorBoundary> 
-			    <CartProvider>
-          <MainLayout>
-            <App />
-          </MainLayout>
-          </CartProvider>
-        </ErrorBoundary>
-      </Router>
-  </QueryClientProvider>
-  </React.StrictMode> || document.createElement("div"),
+    <QueryProvider>
+        <Router>
+          <ErrorBoundary> 
+            <CartProvider>
+              <MainLayout>
+                <App />
+              </MainLayout>
+            </CartProvider>
+          </ErrorBoundary>
+        </Router>
+    </QueryProvider>
+  </React.StrictMode>
 )

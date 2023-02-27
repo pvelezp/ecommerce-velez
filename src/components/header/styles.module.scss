@@ -5,8 +5,39 @@
    display:flex;
    align-items: center;
    justify-content: space-between;
-   padding:0.3rem 1rem; 
+   padding:0.3rem 2.5rem; 
+   z-index: 1;
    width: 100%;
-   box-shadow: 0 3px 9px rgba(0,0,0,0.2);
-   background-color: #fafafa;
+   background: #f9f7f7;
+   box-shadow: 8px 8px 16px #cccccc, -8px -8px 16px #f4f4f4;
+   &Nav{
+      flex:1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 3rem;
+      ul{
+         display: flex;
+         align-items: center;
+         gap:20;
+        > li {
+           cursor: pointer;
+            list-style: none;
+            margin-right: 1rem;
+            margin-left: 1rem;
+         }
+      }
+   }
+   &Cart{
+      position: relative;
+      >i{
+         color:#655f5f;
+      }
+      >h3{
+         position: absolute;
+         top:-50%;
+         right:-70%;
+         color:#655f5f;
+         font-size: 1.4rem;
+      }
+   }
 }

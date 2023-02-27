@@ -5,9 +5,15 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Alegreya Sans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  color:#6a6565;
 }
 
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color:#908c8c;
+}
 

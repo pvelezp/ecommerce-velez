@@ -1,7 +1,6 @@
-
 import { useState } from "react"
 import { useSaveToCart } from "@/services"
-import { Selector } from "@/components"
+import { Selector, Button, Spinner } from "@/components"
 import { useCartContext } from "@/context"
 import styles from "./styles.module.scss"
 
@@ -23,24 +22,24 @@ export const Actions = ({options, productId}) => {
             addToCart(res.count);
         }
     }
-
     return (
         <div className={styles.actions}>
-            <h3>Actions</h3>
             <form onSubmit={handleSubmit}>
-            <Selector
-            handleSelect={setColor}
-        options={options.colors}
-        label="Colors"
-             />
-            <Selector
-            handleSelect={setStorage}
-        label="Storages"
-        options={options.storages}
-             />
-             <button disabled={!color || !storage} type="submit" >
-            {isCartLoading ? "..." : "Add to cart"}
-            </button>
+                <div className={styles.actionsSelectors}>
+                    <Selector
+                    handleSelect={setColor}
+                    options={options.colors}
+                    label="Colors"
+                    />
+                    <Selector
+                    handleSelect={setStorage}
+                    label="Storages"
+                    options={options.storages}
+                    />
+                </div>
+                <Button fullWidth disabled={!(color && storage)} type="submit">
+                {isCartLoading ? <Spinner />: "Add to cart"}
+                </Button>
             </form>
         </div>
     )
