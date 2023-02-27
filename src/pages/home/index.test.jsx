@@ -1,9 +1,8 @@
 import { Home } from "@/pages";
 import { describe, expect, it, beforeEach } from "vitest"
 import { render, screen, user, within, rest } from "@/utils";
-import { BASE_URL } from "@/constants";
 
-export const handlers = [rest.get(`${BASE_URL}/product`, (_, res, ctx) =>  res(ctx.status(200)))];
+export const handlers = [rest.get(`${import.meta.env.VITE_BASE_URL}/product`, (_, res, ctx) =>  res(ctx.status(200)))];
 
 describe("Home integration tests", () => {
   beforeEach(() =>{

@@ -1,8 +1,9 @@
+@import "@/utils/variables";
 
 .card {
   border-radius: 40px;
-  background: #fafafa;
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+  background: $white;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px $white;
   padding: 20px 35px;
   transition: box-shadow 0.34s ease-in-out, transform 0.35s ease-in-out;
   cursor: pointer;

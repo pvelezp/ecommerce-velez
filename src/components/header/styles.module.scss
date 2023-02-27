@@ -1,3 +1,5 @@
+@import "@/utils/variables";
+
 .header{
    position:sticky;
    top:0;
@@ -8,7 +10,7 @@
    padding:0.3rem 2.5rem; 
    z-index: 1;
    width: 100%;
-   background: #f9f7f7;
+   background: $headerBackground;
    box-shadow: 8px 8px 16px #cccccc, -8px -8px 16px #f4f4f4;
    &Nav{
       flex:1;
@@ -30,13 +32,13 @@
    &Cart{
       position: relative;
       >i{
-         color:#655f5f;
+         color:$gray;
       }
       >h3{
          position: absolute;
          top:-50%;
          right:-70%;
-         color:#655f5f;
+         color:$gray;
          font-size: 1.4rem;
       }
    }
