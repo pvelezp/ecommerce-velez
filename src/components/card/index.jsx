@@ -1,4 +1,5 @@
 import { accessibleOnClick } from "@/utils";
+import { PropTypes } from "prop-types";
 import styles from "./styles.module.scss";
 
 export const Card = ({ item, onHandleClick }) => {
@@ -27,4 +28,14 @@ export const Card = ({ item, onHandleClick }) => {
 			</div>
 		</article>
 	);
+};
+
+Card.propTypes = {
+	item:PropTypes.shape({
+	price: PropTypes.string,
+	imgUrl: PropTypes.string,
+	model: PropTypes.string,
+	brand: PropTypes.string,
+	}).isRequired,
+	onHandleClick: PropTypes.func
 };

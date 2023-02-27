@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { accessibleOnClick } from "@/utils";
+import { PropTypes } from "prop-types";
 import styles from "./styles.module.scss";
 
 export const SearchBox = ({ onChange }) => {
@@ -29,4 +30,8 @@ export const SearchBox = ({ onChange }) => {
 			) : null}
 		</div>
 	);
+};
+
+SearchBox.propTypes = {
+	onChange: PropTypes.func.isRequired
 };

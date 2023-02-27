@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import styles from "./styles.module.scss";
 
 export const Description = ({data}) => {
@@ -28,3 +29,17 @@ export const Description = ({data}) => {
     </section>
     )
 }
+
+Description.propTypes = {
+	data:PropTypes.shape({
+        model: PropTypes.string,
+        price: PropTypes.string,
+        cpu: PropTypes.string,
+        os: PropTypes.string,
+        displayResolution: PropTypes.string,
+        battery: PropTypes.string,
+        primaryCamera: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+        dimentions: PropTypes.string,
+        weight: PropTypes.string,
+	}).isRequired,
+};

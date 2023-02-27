@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useSaveToCart } from "@/services"
 import { Selector, Button, Spinner } from "@/components"
 import { useCartContext } from "@/context"
+import { PropTypes } from "prop-types";
 import styles from "./styles.module.scss"
 
 export const Actions = ({options, productId}) => {
@@ -22,6 +23,7 @@ export const Actions = ({options, productId}) => {
             addToCart(res.count);
         }
     }
+    
     return (
         <div className={styles.actions}>
             <form onSubmit={handleSubmit}>
@@ -44,3 +46,16 @@ export const Actions = ({options, productId}) => {
         </div>
     )
 }
+
+const optionShape = PropTypes.arrayOf(PropTypes.shape({
+    code:PropTypes.number,
+    name: PropTypes.string,
+}))
+
+Actions.propTypes = {
+	options:PropTypes.shape({
+        colors: optionShape,
+        storages: optionShape,
+    }).isRequired,
+	productId: PropTypes.string.isRequired,
+};

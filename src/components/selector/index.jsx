@@ -1,5 +1,6 @@
 import { Button } from "@/components";
 import { useState, useEffect } from "react";
+import { PropTypes } from "prop-types";
 import styles from "./styles.module.scss";
 
 export const Selector = ({options, label, handleSelect}) => {
@@ -35,3 +36,14 @@ export const Selector = ({options, label, handleSelect}) => {
         </>
     )
 }
+
+Selector.propTypes = {
+	options: PropTypes.arrayOf(
+        PropTypes.shape({
+            code: PropTypes.number,
+            name: PropTypes.string,
+            }).isRequired,
+    ),
+	handleSelect: PropTypes.func.isRequired,
+	label: PropTypes.string,
+};
