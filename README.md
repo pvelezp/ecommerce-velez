@@ -3,6 +3,8 @@ This is an application built by Pablo Vélez based on a frontend test.
 It shows a mobile devices list. You can see the product detail in a new page and
 also add that product into the cart one by one.
 
+[See Deployed demo](https://velez-ecommerce.netlify.app/) 
+
 ## Installation
 You should run:
 ```bash
@@ -43,6 +45,7 @@ This is a list of some relevant changes:
 the mayority of the code. Unit testing to main components and integration testing for
 the whole shopping flow and experience.
 5. A Dockerfile was added.
+6. The application is fully responsive on mobile and desktop.
 
 Im totally open to feedback and comments about my code. Thank you.
 
