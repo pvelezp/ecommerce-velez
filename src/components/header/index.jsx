@@ -1,5 +1,6 @@
 import { useCartContext } from "@/context"
 import { Link, useLocation, useNavigate } from "react-router-dom"
+import { accessibleOnClick } from "@/utils"
 import styles from "./styles.module.scss"
 
 export const Header = () => {
@@ -14,11 +15,11 @@ export const Header = () => {
             <nav className={styles.headerNav}>
                 <ul>
                     <li
-                    onClick={()=>isHome ? null :navigate("/")}
+                    {...accessibleOnClick(()=>isHome ? null :navigate("/"))}
                      style={{color:isHome? "#6ba051":"black"}}>Home</li>
                     <i className="fa fa-chevron-right" />
                     <li 
-                    onClick={()=>(isHome && !!currentDetailId) ?  navigate(`/detail/${currentDetailId}`): null}
+                    {...accessibleOnClick(()=>(isHome && !!currentDetailId) ?  navigate(`/detail/${currentDetailId}`): null)}
                     style={{color:pathname.includes("/detail/")? "#6ba051":"black"}}>Detail</li>
                 </ul>
             </nav>
