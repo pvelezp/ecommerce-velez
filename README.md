@@ -46,6 +46,7 @@ the mayority of the code. Unit testing to main components and integration testin
 the whole shopping flow and experience.
 5. A Dockerfile was added.
 6. The application is fully responsive on mobile and desktop.
+7. All persistance and revalidation requests asked in the test have been fulfilled with React-query optimal caching and client side data management.
 
 Im totally open to feedback and comments about my code. Thank you.
 
